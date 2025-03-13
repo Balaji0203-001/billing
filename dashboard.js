@@ -113,7 +113,7 @@ function loadRecentBills() {
         row.innerHTML = `
             <td>${bill.shopName}</td>
             <td>${formatDate(bill.date)}</td>
-            <td>$${parseFloat(bill.amount).toFixed(2)}</td>
+            <td>${parseFloat(bill.amount).toFixed(2)}</td>
         `;
         recentBillsTable.appendChild(row);
     });
@@ -157,7 +157,7 @@ function loadAllBills() {
         row.innerHTML = `
             <td>${bill.shopName}</td>
             <td>${formatDate(bill.date)}</td>
-            <td>$${parseFloat(bill.amount).toFixed(2)}</td>
+            <td>${parseFloat(bill.amount).toFixed(2)}</td>
             <td>${bill.location}</td>
             <td>
                 <button class="action-btn view-bill" data-id="${bill.id}"><i class="fas fa-eye"></i></button>
@@ -272,7 +272,7 @@ function renderMaterialsList() {
             <div class="material-details">
                 <span class="material-name">${material.name}</span>
                 <span class="material-info">
-                    Qty: ${material.quantity} × $${parseFloat(material.price).toFixed(2)} = $${material.total}
+                     ${material.quantity} × ${parseFloat(material.price).toFixed(2)} = ${material.total}
                 </span>
             </div>
             <button type="button" class="material-remove" data-id="${material.id}">
@@ -395,13 +395,13 @@ function viewBillDetails(billId) {
     let materialsHtml = '';
     if (bill.materials && bill.materials.length > 0) {
         materialsHtml = `
-            <h3>Materials</h3>
+            <h3>Material List</h3>
             <table class="details-table">
                 <thead>
                     <tr>
                         <th>Material</th>
                         <th>Quantity</th>
-                        <th>Price</th>
+                        <th>Price per item</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -410,8 +410,8 @@ function viewBillDetails(billId) {
                         <tr>
                             <td>${material.name}</td>
                             <td>${material.quantity}</td>
-                            <td>$${parseFloat(material.price).toFixed(2)}</td>
-                            <td>$${material.total}</td>
+                            <td>${parseFloat(material.price).toFixed(2)}</td>
+                            <td>${material.total}</td>
                         </tr>
                     `).join('')}
                 </tbody>
@@ -441,7 +441,7 @@ function viewBillDetails(billId) {
             </div>
             <div class="details-item">
                 <label>Amount:</label>
-                <span>$${parseFloat(bill.amount).toFixed(2)}</span>
+                <span>${parseFloat(bill.amount).toFixed(2)}</span>
             </div>
             <div class="details-item">
                 <label>Location:</label>
@@ -473,7 +473,7 @@ function viewSupplierDetails(supplierId) {
             <h3>Purchase History</h3>
             <div class="summary-item">
                 <label>Total Spent:</label>
-                <span>$${totalSpent}</span>
+                <span>${totalSpent}</span>
             </div>
             <div class="summary-item">
                 <label>Total Bills:</label>
@@ -490,7 +490,7 @@ function viewSupplierDetails(supplierId) {
                     ${supplierBills.map(bill => `
                         <tr>
                             <td>${formatDate(bill.date)}</td>
-                            <td>$${parseFloat(bill.amount).toFixed(2)}</td>
+                            <td>${parseFloat(bill.amount).toFixed(2)}</td>
                         </tr>
                     `).join('')}
                 </tbody>
@@ -644,7 +644,7 @@ function filterBills() {
         row.innerHTML = `
             <td>${bill.shopName}</td>
             <td>${formatDate(bill.date)}</td>
-            <td>$${parseFloat(bill.amount).toFixed(2)}</td>
+            <td>${parseFloat(bill.amount).toFixed(2)}</td>
             <td>${bill.location}</td>
             <td>
                 <button class="action-btn view-bill" data-id="${bill.id}"><i class="fas fa-eye"></i></button>
