@@ -91,7 +91,7 @@ function updateDashboardStats() {
     document.getElementById('total-bills').textContent = bills.length;
     
     const totalExpense = bills.reduce((sum, bill) => sum + parseFloat(bill.amount), 0);
-    document.getElementById('total-expense').textContent = `$${totalExpense.toFixed(2)}`;
+    document.getElementById('total-expense').textContent = `${totalExpense.toFixed(2)}`;
     
     document.getElementById('total-suppliers').textContent = suppliers.length;
 }
