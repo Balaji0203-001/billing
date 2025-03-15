@@ -24,6 +24,7 @@ body {
 .sidebar {
     width: 260px;
     background-color: #2563eb;
+    /* background-color: orange; */
     color: white;
     transition: all 0.3s ease;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -464,7 +465,7 @@ input:focus {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 100px;
+        width: 70px;
         overflow: hidden;
     }
 
@@ -483,7 +484,7 @@ input:focus {
     }
 
     .main-content {
-        margin-left: 10px;
+        margin-left: 70px;
     }
 
     .menu-toggle {
@@ -533,33 +534,4 @@ input:focus {
     max-width: 100%;
     margin-top: 15px;
     border-radius: 4px;
-}
-
-/* Additional Mobile Styles */
-@media screen and (max-width: 480px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .user-info {
-        margin-top: 10px;
-    }
-
-    .search-bar {
-        flex-direction: column;
-    }
-
-    .search-bar input {
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-
-    .search-bar button {
-        border-radius: 4px;
-    }
-
-    .modal-content {
-        margin: 20% auto;
-    }
 }
